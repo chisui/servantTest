@@ -1,0 +1,27 @@
+name: quoteService
+version: 0.1.0
+license: BSD3
+author: Philipp Dargel
+category: Web
+
+ghc-options: -fprint-potential-instances -Wall -Werror -O2
+
+dependencies:
+- base
+- servant-server
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Quotes
+  dependencies:
+    - aeson
+    - servant
+
+executable:
+  source-dirs: app
+  main: Main.hs
+  dependencies:
+    - quoteService
+    - wai-logger
+    - warp

@@ -1,0 +1,10 @@
+.stack-work/
+*.tix
+*.pdf
+*.o
+*.hi
+result
+log
+dist/
+dist-newstyle/
+
