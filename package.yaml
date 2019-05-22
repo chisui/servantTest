@@ -1,4 +1,4 @@
-name: quoteService
+name: servantExample 
 version: 0.1.0
 license: BSD3
 author: Philipp Dargel
@@ -13,15 +13,16 @@ dependencies:
 library:
   source-dirs: src
   exposed-modules:
-    - Quotes
+  - Users 
   dependencies:
-    - aeson
-    - servant
+  - aeson
+  - servant
 
 executable:
   source-dirs: app
   main: Main.hs
   dependencies:
-    - quoteService
-    - wai-logger
-    - warp
+  - servantExample 
+  - wai
+  - wai-logger
+  - warp

@@ -2,7 +2,10 @@
 {-# LANGUAGE DeriveGeneric  #-}
 {-# LANGUAGE PackageImports #-}
 {-# LANGUAGE TypeOperators  #-}
-module Quotes (QuoteServiceAPI, quoteServiceHandler) where
+module Users 
+  ( UsersServiceAPI
+  , usersServiceHandler
+  ) where
 
 import           "aeson" Data.Aeson.Types        (ToJSON)
 import           "base" GHC.Generics             (Generic)
@@ -19,9 +22,9 @@ data User = User
 instance ToJSON User
 
 
-type QuoteServiceAPI = "users" :> Get '[JSON] User
+type UsersServiceAPI = "users" :> Get '[JSON] User
 
 
-quoteServiceHandler :: Server QuoteServiceAPI
-quoteServiceHandler = pure $ User "asdf" 12
+usersServiceHandler :: Server UsersServiceAPI
+usersServiceHandler = pure User{ name = "asdf", age = 12 }
 
