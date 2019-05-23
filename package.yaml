@@ -18,6 +18,7 @@ library:
   - Db.User
   dependencies:
   - text
+  - polysemy
   - aeson
   - servant
   - persistent

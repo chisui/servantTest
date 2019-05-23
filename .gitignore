@@ -9,4 +9,5 @@ dist/
 dist-newstyle/
 **/.*.swp
 *.cabal
+.ghc.*
 

@@ -1,6 +1,8 @@
-{ pkgs ? import ./nixpkgs.pinned.nix }:
+{ pkgs ? import ./nixpkgs.pinned.nix
+}:
 let
-  drv = pkgs.haskell.packages.ghc843.callCabal2nix "quoteService" ./. {};
+  hsPkgs = pkgs.haskell.packages.ghc865;
+  drv = hsPkgs.callCabal2nix "servantExample" ./. {};
 in
   if pkgs.lib.inNixShell then drv.env else drv
 
