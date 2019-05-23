@@ -1,0 +1,5 @@
+rm -r dist-newstyle 2> /dev/null
+rm servantExample.cabal 2> /dev/null
+nix-shell -p haskellPackages.hpack --run hpack 
+nix-shell -p cabal-install --run "cabal v2-repl"
+

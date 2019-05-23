@@ -12,13 +12,11 @@ import           "wai-logger" Network.Wai.Logger (withStdoutLogger)
 
 import           "servant-server" Servant        (serve)
 
-
-import           "servantExample" Users          (UsersServiceAPI,
-                                                  usersServiceHandler)
+import           "servantExample" Api            (API, server)
 
 
 serveUsers :: Application
-serveUsers = serve (Proxy @UsersServiceAPI) usersServiceHandler
+serveUsers = serve (Proxy @API) server
 
 main :: IO ()
 main = withStdoutLogger serveWithLogger
@@ -26,4 +24,3 @@ main = withStdoutLogger serveWithLogger
     serveWithLogger logger
       = let settings = setPort 8080 . setLogger logger $ defaultSettings
          in runSettings settings serveUsers
-

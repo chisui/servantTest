@@ -13,10 +13,16 @@ dependencies:
 library:
   source-dirs: src
   exposed-modules:
-  - Users 
+  - Api 
+  - Api.Users
+  - Db.User
   dependencies:
+  - text
   - aeson
   - servant
+  - persistent
+  - persistent-template
+  - persistent-sqlite
 
 executable:
   source-dirs: app

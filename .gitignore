@@ -8,4 +8,5 @@ log
 dist/
 dist-newstyle/
 **/.*.swp
+*.cabal
 
